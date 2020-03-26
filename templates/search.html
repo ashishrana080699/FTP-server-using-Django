@@ -1,0 +1,83 @@
+{% extends "menu.html" %}
+{% block content %}
+{% load static %}
+<head>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Search</h2>
+         <form class="form-horizontal" method="POST" action="/find" enctype="multipart/form-data">
+           {%csrf_token%}
+       
+           <div class="form-group">
+             <label class="control-label col-sm-3" >Department :</label>
+             <div class="col-sm-4">
+               <select name="department" required>
+                   <option disabled="disabled" selected="selected">Choose_option</option>
+                   <option>CSE</option>
+                   <option>ENTC</option>
+                   <option>MECH</option>
+                   <option>CE</option>
+                   </select>
+               <div class="select-dropdown"></div>
+             </div>
+           </div>
+       <br>
+           <div class="form-group">
+             <label class="control-label col-sm-3" >Category :</label>
+             <div class="col-sm-4">
+               <select name="category" required>
+                   <option disabled="disabled" selected="selected">Choose_option</option>
+                   <option>Workshop</option>
+                   <option>Seminar</option>
+                   <option>Expert Talk</option>
+                   </select>
+               <div class="select-dropdown"></div>
+             </div>
+           </div>
+           
+           <br>
+           
+         <div class="form-group">
+           <label class="control-label col-sm-3" >Year :</label>
+           <div class="col-sm-4">
+             <input type="number" class="form-control"  placeholder="" name="year" min="2020" required>
+           </div>
+         </div>
+           <br>
+           <div class="form-group">
+             <label class="control-label col-sm-3" >Semister :</label>
+             <div class="col-sm-4">
+               <select name="semister" required>
+                   <option disabled="disabled" selected="selected">Choose Semister</option>
+                   <option>1st Semister</option>
+                   <option>2nd Semister</option>
+                   </select>
+               <div class="select-dropdown"></div>
+             </div>
+           </div>
+           <br>
+           <br><br>
+           <div class="form-group">        
+             <div class="col-sm-offset-2 col-sm-10">
+               <button type="submit" class="btn btn-primary">Search</button>
+             </div>
+           </div>
+         </form>
+       </div>
+       <br><br>
+       {{x}}
+    <div class="container info-boxes pt100 pb100">
+        <h2>Result</h2>
+        {% for i in path %}
+        
+        <a href="{{ i }}" class="btn btn-primary btn-sm" download >
+          {{i}}
+        </a>
+      <br>
+        <br>
+        {%endfor%}
+    </div>
+</body>
+{% endblock %}

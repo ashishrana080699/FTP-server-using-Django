@@ -1,0 +1,143 @@
+{% extends "menu.html" %}
+{% block content %}
+{% load static %}
+
+<head>
+  <title>CSE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+ <h2>INFO</h2>
+  <form class="form-horizontal" method="POST" action="/info_upload" enctype="multipart/form-data">
+    {%csrf_token%}
+
+    <div class="form-group">
+      <label class="control-label col-sm-3" >Department :</label>
+      <div class="col-sm-4">
+        <select name="department" required>
+            <option disabled="disabled" selected="selected">Choose_option</option>
+            <option>CSE</option>
+            <option>ENTC</option>
+            <option>MECH</option>
+            <option>CE</option>
+            </select>
+        <div class="select-dropdown"></div>
+      </div>
+    </div>
+<br>
+	<div class="form-group">
+      <label class="control-label col-sm-3" >Category :</label>
+      <div class="col-sm-4">
+        <select name="category" required>
+            <option disabled="disabled" selected="selected">Choose_option</option>
+            <option>Workshop</option>
+            <option>Seminar</option>
+            <option>Expert Talk</option>
+            </select>
+        <div class="select-dropdown"></div>
+      </div>
+    </div>
+	
+	<br>
+	<div class="form-group">
+      <label class="control-label col-sm-3" for="date">Start Date :</label>
+      <div class="col-sm-4">
+        <input type="date" class="form-control" placeholder="" name="startdate" required>
+      </div>
+    </div><br>
+	<div class="form-group">
+      <label class="control-label col-sm-3" for="date">End Date :</label>
+      <div class="col-sm-4">
+        <input type="date" class="form-control"  placeholder="" name="enddate" required>
+      </div>
+    </div>
+	<br>
+	<div class="form-group">
+      <label class="control-label col-sm-3" for="email">Duration in Days :</label>
+      <div class="col-sm-4">
+        <input type="number" class="form-control"  placeholder="" name="duration" min="0" required>
+      </div>
+    </div>
+	<br>
+	<div class="form-group">
+      <label class="control-label col-sm-3" >Number of Participants :</label>
+      <div class="col-sm-4">
+        <input type="number" class="form-control"  placeholder="" name="participants" min="0" required>
+      </div>
+    </div>
+	
+	<br>
+  <div class="form-group">
+    <label class="control-label col-sm-3" >Year :</label>
+    <div class="col-sm-4">
+      <input type="number" class="form-control"  placeholder="" name="year" min="2020" required>
+    </div>
+  </div>
+	<br>
+	<div class="form-group">
+      <label class="control-label col-sm-3" >Semister :</label>
+      <div class="col-sm-4">
+        <select name="semister" required>
+            <option disabled="disabled" selected="selected">Choose Semister</option>
+            <option>1st Semister</option>
+            <option>2nd Semister</option>
+            </select>
+        <div class="select-dropdown"></div>
+      </div>
+    </div>
+	<br>
+	<div class="form-group">
+      <label class="control-label col-sm-3" >Organising Faculty :</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control"  placeholder="Enter email" name="facultyname" required>
+      </div>
+    </div>
+	<br>
+	<div class="form-group">
+      <label class="control-label col-sm-3" >Email :</label>
+      <div class="col-sm-4">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+      </div>
+    </div>
+	<br>
+	<div class="form-group">
+      <label class="control-label col-sm-3" >Mob No :</label>
+      <div class="col-sm-4">
+        <input type="number" class="form-control"  placeholder="Enter mob no" name="phone" required>
+      </div>
+    </div>
+	<br>
+	<div class="form-group">
+      <label class="control-label col-sm-3" >Scanned Document :</label>
+      <div class="col-sm-4">
+        <input type="file" class="form-control"  id="file" name="file" required>
+		<div class="label--desc">Upload your file. Max file size 50 MB</div>
+		
+      </div>
+    </div>
+	
+	<br>
+	
+    <div class="form-group">
+      <label class="control-label col-sm-3" >Feedback :</label>
+      <div class="col-sm-4">          
+        <textarea class="form-control" placeholder="Give feedback" name="message" required></textarea>
+      </div>
+    </div>
+    <br><br>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+<br><br>
+</body>
+{% endblock %}
