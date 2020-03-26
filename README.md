@@ -1,5 +1,5 @@
 # FTP-server-using-Django
-### I have Developed this application for storing the files and maintaining the record using Sqlite3 Database.
+### I have Developed this application for storing the files and maintaining the records of events that are conducted in college using Django & Sqlite3 Database.
 
 ### Deployed this Appplication on PythonAnywhere
 http://ashishrana.pythonanywhere.com/
