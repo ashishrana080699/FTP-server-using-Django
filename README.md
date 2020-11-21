@@ -2,7 +2,7 @@
 ### I have Developed this application for storing the files and maintaining the records of events that are conducted in college using Django & Sqlite3 Database.
 
 ### Deployed this Appplication on PythonAnywhere
-http://ashishrana.pythonanywhere.com/
+https://ashishrana.pythonanywhere.com/
 
 ### App View
 
